@@ -1,1 +1,1 @@
-This is feature 1
+Change this line in B-2 so it can be a conflict.
