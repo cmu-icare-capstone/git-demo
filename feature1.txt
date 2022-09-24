@@ -1,1 +1,1 @@
-This is feature 1
+Change this line in conflicts branch so it can be a conflict.
