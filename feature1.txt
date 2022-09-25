@@ -1,1 +1,5 @@
-This is feature 1
+<<<<<<< HEAD
+Change this line in conflicts branch so it can be a conflict.
+=======
+Change this line in B-2 so it can be a conflict.
+>>>>>>> master
