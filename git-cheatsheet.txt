@@ -1,0 +1,62 @@
+============================one-time setup env======================
+##use GIT BASH##
+
+#checking all ssh keys that lives in your computer
+ls -al ~/.ssh
+##check if you have some file named like id_rsa and id_rsa.pub
+ 
+#if u dont have ssh key above or you want a new pair of keys, 
+##generate new keys
+##follow the prompt and just use the defaults. press enter as default
+ssh-keygen -t rsa -b 4096
+
+#checking all ssh keys that lives in your computer to verify
+ls -al ~/.ssh
+
+#open the ssh key file that ends with .pub
+cat 
+##go to your github account, go to "settings". on left panel find "SSH and GPG keys"
+## select "add new ssh key"
+
+##configure userinfo for connection
+git config --global user.name "Mengyao Xu"
+git config --global user.email "mengyaoxu1@gmail.com"
+
+##OPTIONAL create a file named .gitignore to keep some files outside of git tracking
+##put all filenames under the same folder inside this file that i don't want git to
+
+##clone a repo to folder. run this cmd in the folder. 
+e.g. cd /c/Users/mengy/Desktop/CMU/2022Fall/Capstone
+git clone git@github.com:cmu-icare-capstone/git-demo.git
+
+=======routine=====
+##before start working, keep your copy of master properlly updated
+git checkout master
+git pull origin master
+
+##start working on your own branch
+git chekcout <perseonal branch> 
+## git checkout -b <personal branch> to create a new branch
+
+##make whatever change on files
+
+##when done making changes
+git status 
+git add . 
+git commit -m "message or description on changes you are commiting"
+
+##make sure your local copy of master branch is up to date before merging. 
+git checkout master
+git pull origin mater
+
+
+##go back to your personal branch to continue the commit/push/merge
+git checkout <personal>
+git merge master
+if conflict:
+    solve it, manually delete lines we are not going to keep
+    press esc and then type :wq, hit Enter
+    git merge --continue
+else:
+    git push origin personal 
+    ##then go to github console to manually merge/pull
