@@ -1,5 +1,5 @@
 ============================one-time setup env======================
-##use GIT BASH##
+##use GIT BASH on Windows or Macos terminal##
 
 #checking all ssh keys that lives in your computer
 ls -al ~/.ssh
@@ -13,21 +13,26 @@ ssh-keygen -t rsa -b 4096
 #checking all ssh keys that lives in your computer to verify
 ls -al ~/.ssh
 
-#open the ssh key file that ends with .pub
-cat 
+#show and copy the ssh key file that ends with .pub
+cat <filename> 
+e.g. cat ~/.ssh/id_rsa.pub
+
 ##go to your github account, go to "settings". on left panel find "SSH and GPG keys"
-## select "add new ssh key"
+## select "add new ssh key" and add the .pub key you just copied
 
 ##configure userinfo for connection
 git config --global user.name "Mengyao Xu"
 git config --global user.email "mengyaoxu1@gmail.com"
 
 ##OPTIONAL create a file named .gitignore to keep some files outside of git tracking
-##put all filenames under the same folder inside this file that i don't want git to
+##put all filenames under the same folder inside this file that i don't want git to track
+
+##change to the directory that you want to work on
+e.g. cd /c/Users/mengy/Desktop/CMU/2022Fall/Capstone
 
 ##clone a repo to folder. run this cmd in the folder. 
-e.g. cd /c/Users/mengy/Desktop/CMU/2022Fall/Capstone
 git clone git@github.com:cmu-icare-capstone/git-demo.git
+git remote -v (should show two urls if success)
 
 =======routine=====
 ##before start working, keep your copy of master properlly updated
@@ -58,8 +63,8 @@ git checkout <personal>
 git merge master
 if conflict:
     solve it, manually delete lines we are not going to keep
-    press esc and then type :wq, hit Enter
     git merge --continue
+    press esc and then type :wq, hit Enter
 else:
-    git push origin personal 
+    git push origin <personal> 
     ##then go to github console to manually merge/pull
