@@ -38,6 +38,9 @@ git pull origin master
 git chekcout <perseonal branch> 
 ## git checkout -b <personal branch> to create a new branch
 
+##if an existing branch, do this to make sure personal branch is uptodate with master
+git merge master
+
 ##make whatever change on files
 
 ##when done making changes
